@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+html, body {
+    height: 100%; 
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFC0CB;
+}
+
+#video {
+    background-image: url(assets/moranguinho.gif);
+    margin-top: 20px;
+    width: 67px;
+    height: 100px;
+    padding: 0;
+}
+
+h1 {
+    color: #FA5053;
+}
+
+input {
+    border-radius: 10px;
+    border: 5px solid #FA5053;
+    outline: none;
+}
+
+button {
+    color: white;
+    background-color: #FA5053;
+    border: 3px solid #E3242B;
+    border-radius: 10px;
+}
+
+#demo2, #demo3, #demo4 {
+    color: #E3242B;
+    font-weight: bold;
+}
+
+.conversoes {
+    margin: 12px
+}
+
+.footer {
+    margin-top: auto; 
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    height: 30px;
+}
+
+.frase span {
+    color: #E3242B;
+    font-weight: bold;
+}
