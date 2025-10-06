@@ -1,6 +1,3 @@
-<!-- Criado por Marise Miranda | 2017.1 -->
-<!-- Adaptado por Matheus Matos | 2025.1 -->
-
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -16,10 +13,19 @@
 
     <h1>Moranguinho's Machine</h1>
 
-    <h3>Digite um número decimal:</h3>
-    <input id="demo1" type="text" placeholder="Ex: 42">
+    <h3>Digite um número:</h3>
+    <input id="demo1" type="text" placeholder="Ex: 1010">
     <br><br>
-    
+
+    <h3>Escolha a base do número digitado:</h3>
+    <select id="baseOriginal">
+        <option value="2">Binário (base 2)</option>
+        <option value="8">Octal (base 8)</option>
+        <option value="10" selected>Decimal (base 10)</option>
+        <option value="16">Hexadecimal (base 16)</option>
+    </select>
+    <br><br>
+
     <audio id="audioBrilho">
         <source src="assets/somBrilho.mp3" type="audio/mpeg">
     </audio>
@@ -27,20 +33,27 @@
     <button onclick="converter()">Converter</button>
 
     <h3>Resultados:</h3>
-    <p class="conversoes">Octal:
-    <div id="demo2"></div>
+
+    <p class="conversoes">Decimal:
+        <div id="resultadoDecimal"></div>
     </p>
-    <p class="conversoes">Hexadecimal:
-    <div id="demo3"></div>
-    </p>
+
     <p class="conversoes">Binário:
-    <div id="demo4"></div>
+        <div id="resultadoBinario"></div>
+    </p>
+
+    <p class="conversoes">Octal:
+        <div id="resultadoOctal"></div>
+    </p>
+    
+    <p class="conversoes">Hexadecimal:
+        <div id="resultadoHexadecimal"></div>
     </p>
 
     <span class="footer">
         <div class="frase">Criado por <span>Marise Miranda</span> | 2017.1</div>
         <div class="frase">Adaptado por <span>Matheus Matos</span> | 2025.1</div>
-        <div class="frase">Estilizado por <span>Giovanna de Oliveira</span> | 2025.9</div>
+        <div class="frase">Estilizado e ampliado por <span>Giovanna de Oliveira</span> | 2025.9</div>
     </span>
 
     <script>
@@ -55,13 +68,21 @@
 
             audio.play();
 
-            var decimal = Number(demo1.value);
+            // O número digitado e a base original
+            var numero = document.getElementById("demo1").value;
+            var base = Number(document.getElementById("baseOriginal").value);
 
-            demo2.innerHTML = decimal.toString(8);
-            demo3.innerHTML = decimal.toString(16);
-            demo4.innerHTML = decimal.toString(2);
+            // Converte o número digitado da base escolhida para decimal
+            var decimal = parseInt(numero, base);
+
+            // Mostra o resultadoultado em toda as bases
+            document.getElementById("resultadoDecimal").innerHTML = decimal.toString(10);
+            document.getElementById("resultadoBinario").innerHTML = decimal.toString(2);
+            document.getElementById("resultadoOctal").innerHTML = decimal.toString(8);
+            document.getElementById("resultadoHexadecimal").innerHTML = decimal.toString(16).toUpperCase();
         }
     </script>
+
 </body>
 
 </html>

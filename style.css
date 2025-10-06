@@ -41,7 +41,7 @@ button {
     border-radius: 10px;
 }
 
-#demo2, #demo3, #demo4 {
+#resultadoDecimal, #resultadoBinario, #resultadoOctal, #resultadoHexadecimal {
     color: #E3242B;
     font-weight: bold;
 }
